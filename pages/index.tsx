@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import TopNav from '../components/TopNav'
 import HeroText from '../components/HeroText'
 import CTA from '../components/CTA'
+import TrustedBy from '../components/TrustedBy'
 
 const Home: NextPage = () => {
   return (
@@ -9,6 +10,7 @@ const Home: NextPage = () => {
       <TopNav />
       <HeroText />
       <CTA />
+      <TrustedBy />
     </div>
   )
 }
