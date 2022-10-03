@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Nav = () => {
   return (
     <nav>
-      <ul className='flex flex-row gap-9'>
+      <ul className='flex flex-row gap-9 text-gray-600 dark:text-dm-accent'>
         <li>
           <Link href='#'>
             <a>Features</a>
