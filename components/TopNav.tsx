@@ -3,8 +3,13 @@ import Nav from "./Nav"
 import SearchBox from "./SearchBox"
 import DarkMode from "./DarkMode"
 import Button from "./Button"
+import { useModalStore } from '../store/store'
+
 
 const TopNav = () => {
+  const isModalOpen = useModalStore(state => state.isModalOpen)
+  const toggleModalState = useModalStore(state => state.toggleModalState)
+
   return (
     <div className="flex flex-row justify-around items-center w-full dark:text-white">
       <div className="left flex flex-row items-center gap-5">
@@ -14,7 +19,11 @@ const TopNav = () => {
         <Nav />
       </div>
       <div className="right flex flex-row items-center gap-5">
-        <SearchBox />
+        {!isModalOpen && (
+          <div  onClick={toggleModalState}>
+            <SearchBox />
+          </div>
+        )}
         <span className="cursor-pointer hover:underline dark:text-dm-accent">
           Sign in
         </span>

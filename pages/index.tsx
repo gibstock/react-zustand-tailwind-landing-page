@@ -4,10 +4,13 @@ import TopNav from '../components/TopNav'
 import HeroText from '../components/HeroText'
 import CTA from '../components/CTA'
 import TrustedBy from '../components/TrustedBy'
+import Modal from '../components/Modal'
 import { useDarkModeStore} from '../store/store'
+import { useModalStore } from '../store/store'
 
 const Home: NextPage = () => {
   const dark = useDarkModeStore(state => state.dark)
+  const isModalOpen = useModalStore(state => state.isModalOpen)
 
   useEffect(() => {
     const modalEvent = (e: any) => {
@@ -36,6 +39,7 @@ const Home: NextPage = () => {
       <HeroText />
       <CTA />
       <TrustedBy />
+      {isModalOpen && <Modal />}
     </div>
   )
 }
