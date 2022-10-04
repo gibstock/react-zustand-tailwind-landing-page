@@ -11,13 +11,14 @@ import { useModalStore } from '../store/store'
 const Home: NextPage = () => {
   const dark = useDarkModeStore(state => state.dark)
   const isModalOpen = useModalStore(state => state.isModalOpen)
+  const toggleModalState = useModalStore(state => state.toggleModalState)
 
+  
   useEffect(() => {
     const modalEvent = (e: any) => {
-      e.preventDefault()
-      if(e.ctrlKey && e.code === 'KeyK') {
-        // Code to launch modal here
-        alert('MODAL!')
+      if(e.ctrlKey && e.code === 'KeyM') {
+        toggleModalState()
+
       }
     }
     document.addEventListener('keydown', modalEvent)
